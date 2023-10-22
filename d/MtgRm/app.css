@@ -1,0 +1,187 @@
+BODY {
+  margin: 5px;
+  background-color: #333333;
+  color: white;
+  font-family: Segoe UI,Verdana,sans-serif;
+  font-size: 12pt;
+}
+@media only screen and (min-width: 600px) {
+  BODY {
+    margin-top: 25px;
+  }
+}
+BUTTON {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #bbddff;
+}
+BUTTON:hover {
+  opacity: 70%;
+}
+BUTTON:disabled {
+  cursor: auto;
+  opacity: 40%;
+}
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+button.icon {
+  background-position-x: 3px;
+  padding-left: 33px;
+  padding-right: 5px;
+}
+button.connect { background-image: url("icons/32/connect.png"); }
+button.disconnect { background-image: url("icons/32/disconnect.png"); }
+button.cancel { background-image: url("icons/32/cancel.png"); }
+.view {
+  max-width: 360px;
+  margin: auto;
+  padding: 5px 10px 5px 10px;  
+  background-color: #444444;
+  border: 2px solid #222222;
+  border-radius: 18px;
+}
+.view .title {
+  padding: 0px 5px 5px 5px;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+}
+.view#ConnectionView .body {
+  padding: 10px;
+}
+.view .body label {
+  display: inline-block;
+  min-width: 100px;
+}
+
+table.audio {
+  width: 100%;
+  margin: 5px 0px;
+  border: 3px solid #222222;
+  border-radius: 10px;
+  border-spacing: 0px;
+  background-color: #222222;
+  color: black;
+}
+table.audio th {
+  color: white;
+  white-space: nowrap;
+  font-size: 14pt;
+}
+table.audio td {
+  border: 3px solid #222222;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: 50% 18%;
+  background-color: #eeffee;
+  padding: 3px 5px;
+  height: 96px;
+  cursor: pointer;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: bottom;
+  white-space: nowrap;
+  user-select: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  table.audio td:hover {
+    opacity: 70%;
+  }
+}
+table.audio td.pending {
+  opacity: 50%;
+}
+table.audio td.enabled {
+  background-color: #eeffee;
+}
+table.audio td.active {
+  #background-color: #99ff99;
+  background-color: #ccffcc;
+  border: 3px solid #33cc33;
+}
+table.audio td.muted {
+  background-color: #ff9999;
+}
+#tblMicrophones td.enabled { background-image: url("icons/64/microphone.png"); }
+#tblMicrophones td.active { background-image: url("icons/64/microphone.png"); }
+#tblMicrophones td.muted { background-image: url("icons/64/microphone-muted.png"); }
+#tblSpeakers td.enabled { background-image: url("icons/64/speaker.png"); }
+#tblSpeakers td.muted { background-image: url("icons/64/speaker-muted.png"); }
+
+#btnBar {
+  z-index: 100;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+@media only screen and (max-width: 600px) {
+  #btnBar button.icon {
+    display: block;
+    height: 32px;  
+    width: 38px;
+    padding: 0px;  
+    font-size: 0px;
+  }
+}
+
+#statusPanel {
+  z-index: 90;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  opacity: 95%;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 18pt;
+  font-weight: bold;
+  color: white;
+}
+.loader,
+.loader:before,
+.loader:after {
+  background: #ffffff;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #ffffff;
+  text-indent: -9999em;
+  margin: 10px auto;
+  margin-top: 40px;  
+  position: relative;
+  font-size: 11px;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+  }
+  40% {
+    box-shadow: 0 -2em;
+  }
+}

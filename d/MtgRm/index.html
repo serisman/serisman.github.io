@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Room - Audio</title>
+  <link rel="icon" type="image/x-icon" href="icons/32/connect.png">
+  <link rel="stylesheet" href="app.css">
+  <script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div class='global'>
+    <div id="btnBar" style="display: none;">
+      <button id="btnDisconnect" class="disconnect icon" title="Disconnect">Disconnect</button>   	  
+    </div>
+    <div id="statusPanel" style="display: none;">
+      <div>Reconnecting...</div>
+      <div class="loader"></div>
+      <div>Please wait</div>
+    </div>
+  </div>
+
+  <div id="ConnectionView" class='view' style="display: none;">
+    <div class='title'>MQTT Connection</div>
+    <div class='body'>
+      <div><label>Hostname: </label><input type="text" id="txtMQTTHostName"/></div>
+      <div><label>Username: </label><input type="text" id="txtMQTTUserName"/></div>
+      <div><label>Password: </label><input type="password" id="txtMQTTPassword"/></div>
+	    <br/>
+	    <div>
+        <button type="button" id="btnConnect" class="connect icon">Connect</button>
+        <button type="button" id="btnCancel" class="cancel icon">Cancel</button>
+      </div>
+	    <br/>
+      <div><label>MQTT Status: </label><span id="status" class="value">Not connected</span></div>
+    </div>
+  </div>
+
+  <div id="MainView" class='view' style="display: none;">
+    <div class='title'>Meeting Room - Audio</div>
+    <div class='body'>
+      <table id="tblMicrophones" class="audio">
+        <thead><tr><th colspan="2">Microphones</th></tr></thead>
+        <tbody>
+        <tr>
+          <td id="mic-nw">North West</td>
+          <td id="mic-ne">North East</td>
+        </tr>
+        <tr>
+          <td id="mic-sw">South West</td>
+          <td id="mic-se">South East</td>
+        </tr>
+        </tbody>
+      </table>
+      <table id="tblSpeakers" class="audio">
+        <thead><tr><th colspan="2">Speakers</th></tr></thead>
+        <tbody>
+        <tr>
+          <td id="spk-nw">North West</td>
+          <td id="spk-ne">North East</td>
+        </tr>
+        <tr>
+          <td id="spk-mw">Mid West</td>
+          <td id="spk-me">Mid East</td>
+        </tr>
+        <tr>
+          <td id="spk-sw">South West</td>
+          <td id="spk-se">South East</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
